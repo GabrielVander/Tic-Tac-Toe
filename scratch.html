@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex_4</title>
+
+    <style>
+        p{
+            position: absolute;
+            font-size: xx-large;
+            color: black;
+        }
+        td, th {
+            text-align: center;
+            position: relative;
+            font-size: xx-large;
+            color: goldenrod;
+            height: 60px;
+            width: 70px;
+        }
+        table{
+            background-color: black;
+            border-color: darkorange;
+
+        }
+    </style>
+</head>
+<body>
+<p>
+    click once --> X<br/>click again --> O<br/>once more --> clear
+</p>
+<table border="2" align="center">
+    <tr>
+        <th colspan="10" id="a">
+            Tic-Tac-Toe
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    table = document.getElementsByTagName("table")[0];
+    table.addEventListener("click", function (event) {
+        let target = event.target;
+        if(target.id !== "a") {
+            if (target.innerText === "") {
+                target.innerText = "X";
+            }
+            else if (target.innerText === "X") {
+                target.innerText = "O";
+            }
+            else if (!(target.id === "O")) {
+                target.innerText = "";
+            }
+        }
+    })
+</script>
